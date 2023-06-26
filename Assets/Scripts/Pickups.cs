@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Pickups : MonoBehaviour
 {
+    
     public int score;
     public Text scoreText;
     public ParticleSystem Pickup;
 
     void Start()
     {
-       
+       Pickup.Stop();
     }
 
     void Update()
@@ -25,6 +26,8 @@ public class Pickups : MonoBehaviour
             score++;
             scoreText.text = score.ToString();
             Destroy(other.gameObject);
+
+            Pickup.Play();
         }
-    }
+}
 }

@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297168526350977807}
-  - component: {fileID: 2904969734817798720}
+  - component: {fileID: 5153422933727744550}
   m_Layer: 0
   m_Name: coin
   m_TagString: coin
@@ -127,7 +127,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2904969734817798720
+--- !u!65 &5153422933727744550
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +138,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.22158745, y: 0.22158757, z: 0.07999642}
+  m_Center: {x: 0.007732585, y: 0.0025775284, z: 0.0038034692}
 --- !u!114 &5912461340121863707
 MonoBehaviour:
   m_ObjectHideFlags: 0
