@@ -4,36 +4,17 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
-    Rigidbody rigidbody;
     Animator Animator;
-    Jump Jump;
 
     void Start()
     {
-       Animator = GetComponent<Animator>(); 
-       rigidbody = GetComponent<Rigidbody>();
-       Jump = GetComponent<Jump>();
+        Animator = GetComponent<Animator>();
     }
-
     void Update()
     {
-        //if not grounded, play jump animation
-        if (!Jump.isGrounded && Input.GetButton("Jump")){
-            Animator.SetBool("isJumping", true);
-            Animator.SetBool("isRunning", false);
-            Animator.SetBool("isFalling", false);
-        }
-
-        //if grounded, play running animation
-        if(Jump.isGrounded){
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0){
             Animator.SetBool("isRunning", true);
-            Animator.SetBool("isJumping", false);
-            Animator.SetBool("isFalling", false);
-        }
-        //if fallen off platform, play falling animation
-        if(rigidbody.position.y < -0.5){
-            Animator.SetBool("isFalling", true);
-            Animator.SetBool("isJumping", false);
+        } else{
             Animator.SetBool("isRunning", false);
         }
     }

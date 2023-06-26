@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class Pickups : MonoBehaviour
 {
-    
-    public int score;
-    public Text scoreText;
     public ParticleSystem Pickup;
-
+    public GameObject door;
     void Start()
     {
        Pickup.Stop();
@@ -23,9 +20,8 @@ public class Pickups : MonoBehaviour
     {
         if(other.gameObject.CompareTag("coin"))
         {
-            score++;
-            scoreText.text = score.ToString();
             Destroy(other.gameObject);
+            Destroy(door);
 
             Pickup.Play();
         }
